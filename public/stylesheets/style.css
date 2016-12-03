@@ -1,0 +1,21 @@
+body {
+  background-image: url("http://nrmarketwatch.com/wp-content/uploads/2015/11/Merchant-Account.jpg");
+    background-size: cover;
+}
+
+.register{
+  background-color:white;
+  margin-top: 3%;
+  border-radius: 9px;
+}
+#logout{
+  margin-top: 3%;
+  border-radius: 5px;
+  margin-left: 86%;
+}
+.dashWrapper{
+  display: flex;
+  background: white;
+  justify-content: space-around;
+  width: 40%;
+}

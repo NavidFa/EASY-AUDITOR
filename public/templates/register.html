@@ -1,0 +1,42 @@
+<div class="row registe">
+  <div class="register col m8 l8 offset-m2 offset-l2">
+    <div ng-click="home()" class="back"><i class="fa fa-times fa-2x"></i>
+  </div>
+    <form class="col s12" name="registerForm" ng-submit="register()">
+      <div class="row">
+        <div class="input-field col s6">
+          <input  id="first_name" ng-model="fields.firstName" name="firstName"type="text" class="validate" required>
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" ng-model="fields.lastName" name="lastName" type="text" class="validate"  required>
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" ng-model="fields.username" name="username" type="email" class="validate" required>
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password"  ng-model="fields.password" name="password" type="password" class="validate" required>
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" ng-model="fields.password1"  type="password" name="password1" class="validate" required>
+          <label for="password">Confirm Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button type="submit" class="btn waves-effect waves-light col s12">Register</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  {{message}}
+</div>
