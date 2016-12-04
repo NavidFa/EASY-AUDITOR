@@ -42,8 +42,7 @@ height: auto;
 .bankLogo{
   width:70px;
   height:70px;
-  margin-bottom:5%;
-
+  margin-top:8%;
 }
 #someinfo{
   margin-bottom: 5%;
@@ -53,4 +52,8 @@ height: auto;
 }
 .row .col.m12{
   padding:5%;
+}
+#doughnut{
+  height:70px !important;
+  width: 70px !important;
 }

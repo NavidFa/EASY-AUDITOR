@@ -46,12 +46,10 @@ app.controller('dashboard', function($scope, $http, $location, $routeParams, log
   $scope.dashinfo = function() {
       $location.path('/chart/')
   }
-  $scope.labels = ['2012'];
-    $scope.series = ['Series A'];
+  $scope.labels = ['a','Balance','Available Credit','b'];
+    $scope.data = [0,400,800,1];
+    $scope.color = ['red','green','blue','black']
 
-    $scope.data = [
-      [90],
-    ];
     login.getuser().then(function(data) {
       console.log(data.data);
         $scope.user = data.data
