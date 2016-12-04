@@ -1,8 +1,12 @@
 app.controller('login', function($scope, $http, $location, $routeParams) {
+  $scope.home = function() {
+      $location.path('/')
+  }
     $scope.registerPage = function() {
         $location.path('/register/')
     }
     $scope.login = function() {
+
         $http.post('/login', $scope.fields).then(function() {
                 $location.path('/addAccount')
             })
@@ -10,6 +14,11 @@ app.controller('login', function($scope, $http, $location, $routeParams) {
                 $location.path('/register/')
             })
     }
+})
+app.controller('home', function($scope, $http, $location, $routeParams){
+  $scope.loginPage = function() {
+      $location.path('/login/')
+  }
 })
 app.controller('register', function($scope, $http, $location, $routeParams) {
     $scope.home = function() {
@@ -34,7 +43,15 @@ app.controller('dashboard', function($scope, $http, $location, $routeParams, log
 
   $scope.userId
   $scope.arrToken
+  $scope.dashinfo = function() {
+      $location.path('/chart/')
+  }
+  $scope.labels = ['2012'];
+    $scope.series = ['Series A'];
 
+    $scope.data = [
+      [90],
+    ];
     login.getuser().then(function(data) {
       console.log(data.data);
         $scope.user = data.data

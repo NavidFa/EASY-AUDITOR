@@ -2,20 +2,55 @@ body {
   background-image: url("http://nrmarketwatch.com/wp-content/uploads/2015/11/Merchant-Account.jpg");
     background-size: cover;
 }
-
+body a:hover{
+  text-decoration: underline;
+}
 .register{
   background-color:white;
   margin-top: 3%;
   border-radius: 9px;
 }
 #logout{
-  margin-top: 3%;
-  border-radius: 5px;
+  border-radius:5px;
   margin-left: 86%;
+  margin-top: 2%;
 }
-.dashWrapper{
-  display: flex;
-  background: white;
-  justify-content: space-around;
-  width: 40%;
+
+#logo{
+  font-family: 'Bungee', cursive;
+}
+#logotext{
+  font-size: 1.4rem;
+}
+.chip{
+  margin-left: 87%;
+  margin-top: 2%;
+}
+#noinfo{
+  height: 50vh;
+}
+#dash{
+height:80vh;
+}
+#dashchart{
+height: auto;
+}
+.blue-text.text-darken-2:hover{
+  color:black !important;
+   text-decoration: underline;
+}
+.bankLogo{
+  width:70px;
+  height:70px;
+  margin-bottom:5%;
+
+}
+#someinfo{
+  margin-bottom: 5%;
+}
+#chartWrapper{
+  padding-bottom: 10%;
+}
+.row .col.m12{
+  padding:5%;
 }

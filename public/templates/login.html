@@ -3,6 +3,8 @@
   <div class="col l4 m4 offset-m7 offset-l7 s12 z-depth-6 card-panel">
     <form class="login-form" name="loginForm" ng-submit="login()">
       <div class="row margin">
+        <div ng-click="home()" class="back"><i class="fa fa-times fa-2x"></i>
+      </div>
         <div class="input-field col s12">
           <i class="mdi-social-person-outline prefix"></i>
           <input class="validate"  ng-model="fields.username" name="username" id="email" type="email" required>
@@ -26,7 +28,7 @@
     </form>
       <div class="row">
         <div class="input-field col s6 m6 l6">
-          <p class="margin medium-small"><button ng-click="registerPage()">Register Now!</button></p>
+          <p class="margin medium-small"><a ng-click="registerPage()">Register Now!</a></p>
         </div>
       </div>
   </div>

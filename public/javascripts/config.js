@@ -1,27 +1,40 @@
 'use strict';
-app.config(function($routeProvider, $locationProvider, plaidProvider) {
+app.config(function($routeProvider, $locationProvider, plaidProvider, ChartJsProvider) {
 
     $routeProvider
         .when('/', {
+            templateUrl: '../templates/home.html',
+            controller: 'home'
+
+        })
+        .when('/login', {
             templateUrl: '../templates/login.html',
-            controller:'login'
+            controller: 'login'
         })
         .when('/register/', {
-          templateUrl: '../templates/register.html',
-          controller:'register'
+            templateUrl: '../templates/register.html',
+            controller: 'register'
         })
         .when('/addAccount/', {
-          templateUrl: '../templates/addAccount.html',
-          controller:'addAccount',
+            templateUrl: '../templates/addAccount.html',
+            controller: 'addAccount',
         })
         .when('/dashboard/', {
-          templateUrl: '../templates/dashboard.html',
-          controller:'dashboard'
+            templateUrl: '../templates/dashboard.html',
+            controller: 'dashboard'
         })
-        plaidProvider.init({
-            clientName: 'My App',
-            env: 'tartan',
-            key:'02458e879bce5785f050d83ddd6320',
-            product: 'auth',
-        });
+        .when('/chart/', {
+            templateUrl: '../templates/chart.html',
+            controller: 'dashboard'
+        })
+    plaidProvider.init({
+        clientName: 'My App',
+        env: 'tartan',
+        key: '02458e879bce5785f050d83ddd6320',
+        product: 'auth',
+    });
+    ChartJsProvider.setOptions({
+        colors: ['#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360']
+    });
+
 })

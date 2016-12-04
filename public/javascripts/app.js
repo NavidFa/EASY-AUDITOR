@@ -1,1 +1,1 @@
-var app = angular.module("ccManager", ['ngRoute','angularSpinner','ng-plaid']);
+var app = angular.module("ccManager", ['ngRoute','angularSpinner','ng-plaid','ngAnimate','chart.js']);
