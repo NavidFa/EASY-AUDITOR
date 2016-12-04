@@ -27,7 +27,7 @@ router.get('/logout', function(req, res, next) {
     res.redirect("/");
 })
 router.post('/register', function(req, res, next) {
-    users.Register(req.body.firstName,req.body.lastName, req.body.username, req.body.password, req.body.password1)
+    users.Register(req.body.firstName, req.body.lastName, req.body.username, req.body.password, req.body.password1)
         .then(function(message) {
             if (message.rowCount == 1) {
                 res.status(200).send('success')
@@ -41,55 +41,65 @@ router.post('/register', function(req, res, next) {
 
 
 router.get('/addAccount', function(req, res, next) {
-  if (req.isAuthenticated()) {
-     res.send(req.user);
-    }else{
-      res.redirect('/login');
+    if (req.isAuthenticated()) {
+        res.send(req.user);
+    } else {
+        res.redirect('/login');
     }
 })
-
+router.post('/AddToken/:id/:institutionName/:token', function(req, res, next) {
+    queries.AddToken(req.params.id, req.params.institutionName, req.params.token)
+        .then(function() {
+                queries.Users()
+                    .then(function(data) {
+                        console.log(data);
+                        res.send(data)
+                    })
+            })
+        })
 
 router.get('/verified', function(req, res, next) {
-   res.send(req.isAuthenticated())
+    res.send(req.isAuthenticated())
 })
 
 var plaidClient = new plaid.Client(process.env.PLAID_CLIENT_ID,
-                                   process.env.PLAID_SECRET,
-                                   plaid.environments.tartan);
+    process.env.PLAID_SECRET,
+    plaid.environments.tartan);
 
 router.post('/authenticate', function(req, res) {
-  var public_token = req.body.public_token;
+    var public_token = req.body.public_token;
 
 
-  // Exchange a public_token for a Plaid access_token
-  plaidClient.exchangeToken(public_token, function(err, exchangeTokenRes) {
-    if (err != null) {
-      // Handle error!
-    } else {
-      // This is your Plaid access token - store somewhere persistent
-      // The access_token can be used to make Plaid API calls to
-      // retrieve accounts and transactions
-      var access_token = exchangeTokenRes.access_token;
-
-
-      plaidClient.getAuthUser(access_token, function(err, authRes) {
+    // Exchange a public_token for a Plaid access_token
+    plaidClient.exchangeToken(public_token, function(err, exchangeTokenRes) {
         if (err != null) {
-          // Handle error!
+            // Handle error!
         } else {
-          // An array of accounts for this user, containing account
-          // names, balances, and account and routing numbers.
-          var accounts = authRes.accounts;
-          // Return account data
-          res.json({accounts: accounts,token:access_token});
+            // This is your Plaid access token - store somewhere persistent
+            // The access_token can be used to make Plaid API calls to
+            // retrieve accounts and transactions
+            var access_token = exchangeTokenRes.access_token;
+
+
+            plaidClient.getAuthUser(access_token, function(err, authRes) {
+                if (err != null) {
+                    // Handle error!
+                } else {
+                    // An array of accounts for this user, containing account
+                    // names, balances, and account and routing numbers.
+                    var accounts = authRes.accounts;
+                    // Return account data
+                    console.log(accounts);
+                    console.log(access_token);
+                    res.json({
+                        accounts: accounts,
+                        token: access_token
+                    });
+                }
+            });
         }
-      });
-    }
-  });
+    });
 });
-
-
-
-
 
 
 

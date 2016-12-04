@@ -21,7 +21,7 @@ app.config(function($routeProvider, $locationProvider, plaidProvider) {
         plaidProvider.init({
             clientName: 'My App',
             env: 'tartan',
-            key:'f2a3a01ca9184c3bfe675e8ccc2247',
+            key:'02458e879bce5785f050d83ddd6320',
             product: 'auth',
         });
 })

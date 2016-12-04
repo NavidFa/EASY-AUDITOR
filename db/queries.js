@@ -14,10 +14,18 @@ function AddUser(firstName, lastName, username, password) {
         password: password
     })
 }
+function AddToken(id,institutionName,token){
+  return knex("users").where({
+           id: id
+       }).update({tokens:JSON.stringify({
+         institutionName:institutionName,
+         token:token
+       })})
+     }
 
 
 module.exports = {
     Users: Users,
     AddUser: AddUser,
-
+    AddToken
 };

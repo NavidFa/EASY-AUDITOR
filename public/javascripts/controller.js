@@ -31,11 +31,23 @@ app.controller('addAccount', function($scope, $http, $location, $routeParams) {
 })
 
 app.controller('dashboard', function($scope, $http, $location, $routeParams, login, logout, verified, plaid) {
+
+  $scope.userId
+  $scope.arrToken
+
     login.getuser().then(function(data) {
+      console.log(data.data);
         $scope.user = data.data
+        $scope.userId =  $scope.user.id
+        $scope.arrToken = $scope.user.tokens.public_token
+        console.log(data.data.tokens.token);
+
+      //  $http.post("https://tartan.plaid.com/balance?client_id=58434421fbfa997d87acb4f7&secret=0f4e383243a3c5282dfb9c89143521&access_token="+data.data.tokens.token).then(function(data){
+      //    console.log(data);
+       //
+      //  })
     })
     verified.verified().then(function(data) {
-        console.log(data.data);
         $scope.verified = data.data
     })
 
@@ -48,18 +60,25 @@ app.controller('dashboard', function($scope, $http, $location, $routeParams, log
 
 
     $scope.token = '';
-    $scope.plaidIsLoaded = plaid.isLoaded;
+    $scope.plaidIsLoaded = plaid.isLoaded();
 
     plaid.create({
-        onSuccess: function(token) {
-            $scope.token = token;
+        onSuccess: function(token, meta) {
+            console.log(token);
+            console.log(meta);
+            $scope.BankName = meta.institution.name
+            if(meta.public_token != null || meta.public_token != undefined || meta.institution.name != undefined ){
+              console.log($scope.userId,meta.institution.name,meta.public_token);
+              $http.post('/AddToken/'+$scope.userId+'/'+meta.institution.name+'/'+meta.public_token)
+            }
+
         },
         onExit: function() {
             console.log('user closed');
         }
     })
     $scope.openPlaid = function() {
-       plaidLink.open();
-     };
+        plaid.open();
+    };
 
 })
