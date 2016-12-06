@@ -46,9 +46,20 @@ app.controller('dashboard', function($scope, $http, $location, $routeParams, log
   $scope.dashinfo = function() {
       $location.path('/chart/')
   }
+  $scope.wells = function() {
+      $location.path('/wells/')
+  }
+  $scope.wellspage = function() {
+      $location.path('/wellspage/')
+  }
   $scope.labels = ['a','Balance','Available Credit','b'];
     $scope.data = [0,400,800,1];
-    $scope.color = ['red','green','blue','black']
+    $scope.data1 = [0,500,500,1];
+    $scope.data2 = [0,100,900,1];
+    $scope.data3 = [0,200,600,1];
+
+
+    $scope.color = ['#ffa726','#afb42b','#00e5f','#e57373']
 
     login.getuser().then(function(data) {
       console.log(data.data);

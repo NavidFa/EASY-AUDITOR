@@ -11,9 +11,9 @@ body a:hover{
   border-radius: 9px;
 }
 #logout{
-  border-radius:5px;
-  margin-left: 86%;
-  margin-top: 2%;
+  margin-left: 90%;
+  font-size: 1rem;
+  color:lightgray;
 }
 
 #logo{
@@ -33,7 +33,7 @@ body a:hover{
 height:80vh;
 }
 #dashchart{
-height: auto;
+height auto;
 }
 .blue-text.text-darken-2:hover{
   color:black !important;
@@ -53,7 +53,17 @@ height: auto;
 .row .col.m12{
   padding:5%;
 }
+.card .horizontal{
+  padding: 4%;
+}
 #doughnut{
   height:70px !important;
   width: 70px !important;
+}
+Chart.defaults.global.colors{
+  color:yellow, blue !important;
+
+}
+#remove{
+
 }

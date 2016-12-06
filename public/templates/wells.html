@@ -4,12 +4,33 @@
             <div class="chip">
                 Welcome {{user.firstName}}
             </div>
-            <a ng-click="wells()" id="logout">Logout</a>
+            <a ng-click="logout()" id="logout">Logout</a>
             <div class="row">
                 <div id="chartWrapper" class="col s12 m10 offset-m1 chartcard">
                     <div id="dashchart" class="card blue-grey lighten-5">
                         <div id="someinfo" class="card-content black-text">
                             <div class="collection">
+
+                              <a  ng-click="wellspage()" class="collection-item col m12">
+                                  <img class="bankLogo col m2" src="images/wellsfargo.png">
+                                  <div class="col s12 m10">
+                                      <div class="card horizontal">
+                                        <div class="card-stacked">
+                                          <div class="card-content">
+                                            <div class="collection">
+                                                <p class="collection-item"><i class="fa fa-credit-card"></i> Total Balance: $100 </p>
+                                                <p class="collection-item"><i class="fa fa-credit-card"></i> Available Balance: $900</p>
+                                                <p class="collection-item"><i class="fa fa-calendar"></i> Next Due Date: 02/03/2017</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card-image">
+                                          <canvas id="doughnut" class="chart chart-doughnut" chart-data="data2" chart-labels="labels" chart-color="color">
+                                          </canvas>
+                                        </div>
+                                      </div>
+                                    </div>
+                              </a>
                                 <a class="collection-item col m12">
                                     <img class="bankLogo col m2" src="images/Chase.png">
                                     <div class="col s12 m10">
@@ -24,13 +45,13 @@
                                             </div>
                                           </div>
                                           <div class="card-image">
-                                            <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-colours="color">
+                                            <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-color="color">
                                             </canvas>
                                           </div>
                                         </div>
                                       </div>
                                 </a>
-                                <a class="collection-item col m12 ">
+                                <a ng-click="wellspage()" class="collection-item col m12 ">
                                     <img class="bankLogo col m2 " src="images/Citi.svg.png">
                                     <div class="col s12 m10">
                                         <div class="card horizontal">
@@ -39,8 +60,7 @@
                                               <div class="collection">
                                                   <p class="collection-item"><i class="fa fa-credit-card"></i> Total Balance: $500 </p>
                                                   <p class="collection-item"><i class="fa fa-credit-card"></i> Available Balance: $500</p>
-                                                  <p class="collection-item red-text text-darken-2"><i class="fa fa-calendar"></i> Next Due Date: 01/12/2017 <i class="fa fa-money"></i>Payment Due Alert
-</p>
+                                                  <p class="collection-item red-text text-darken-2"><i class="fa fa-calendar"></i> Next Due Date: 01/12/2017 <i class="fa fa-money"></i>Payment Due Alert</p>
                                               </div>
                                             </div>
                                           </div>
@@ -71,10 +91,11 @@
                                         </div>
                                       </div>
                                 </a>
+
                                 <ul class="collection with-header">
                                     <li class="collection-header">Summary of Your Accounts: </li>
-                                    <li class="collection-item"><i class="fa fa-credit-card"></i> Total Balance: $1000 </li>
-                                    <li class="collection-item"><i class="fa fa-credit-card"></i> Available Balance: $2200</li>
+                                    <li class="collection-item"><i class="fa fa-credit-card"></i> Total Balance: $1100 </li>
+                                    <li class="collection-item"><i class="fa fa-credit-card"></i> Available Balance: $3100</li>
                                     <li class="collection-item"><i class="fa fa-calendar"></i> Next Due Date: 01/12/2017</li>
                                 </ul>
                             </div>

@@ -27,6 +27,14 @@ app.config(function($routeProvider, $locationProvider, plaidProvider, ChartJsPro
             templateUrl: '../templates/chart.html',
             controller: 'dashboard'
         })
+        .when('/wells/', {
+            templateUrl: '../templates/wells.html',
+            controller: 'dashboard'
+        })
+        .when('/wellspage/', {
+            templateUrl: '../templates/wellspage.html',
+            controller: 'dashboard'
+        })
     plaidProvider.init({
         clientName: 'My App',
         env: 'tartan',
@@ -34,7 +42,7 @@ app.config(function($routeProvider, $locationProvider, plaidProvider, ChartJsPro
         product: 'auth',
     });
     ChartJsProvider.setOptions({
-        colors: ['red','green','blue','black']
+        colors: ['#ffa726','#afb42b','#00e5f','#e57373']
     });
 
 })

@@ -1,0 +1,109 @@
+<div class="row">
+    <div class="col s12 m10 offset-m1">
+        <div ng-show="verified" class="card blue-grey darken-1">
+            <div class="chip">
+                Welcome {{user.firstName}}
+            </div>
+            <a ng-click="logout()" id="logout">Logout</a>
+            <div class="row">
+                <div id="chartWrapper" class="col s12 m10 offset-m1">
+                    <div id="dashchart" class="card blue-grey lighten-5  black-text">
+                        <div id="someinfo" class="card-content black-text">
+                            <div class="collection">
+                                <div class="collection-item col m12  grey lighten-2 black-text">
+                                    <img class="bankLogo col m2 offset-m1" src="images/wellsfargo.png">
+                                    <div class="col s12 m12">
+                                        <div class="card horizontal">
+                                            <div class="card-stacked">
+                                                <div class="card-content">
+                                                    <table class="striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th data-field="Date">Date</th>
+                                                                <th data-field="Description ">Description</th>
+                                                                <th data-field="Amount">Amount</th>
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>12/04/2016</td>
+                                                                <td>EXXONMOBIL 9916</td>
+                                                                <td>$18.87</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12/03/2016</td>
+                                                                <td>INK COFFEE - RIVERFRON 000000001</td>
+                                                                <td>$3.76</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12/03/2016</td>
+                                                                <td>PARTY CITY 000051065</td>
+                                                                <td>$7.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12/02/2016</td>
+                                                                <td>LifeTimeFitness.COM</td>
+                                                                <td>$58.00</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12/02/2016</td>
+                                                                <td>NATURAL GROCERS U025</td>
+                                                                <td>$3.76</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12/01/2016</td>
+                                                                <td>WASTE MGMT WM EZPAY</td>
+                                                                <td>$72.30</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>12/01/2016</td>
+                                                                <td>TRADER JOE'S #303 QPS 303</td>
+                                                                <td>$48.87</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>11/30/2016</td>
+                                                                <td>CHIPOTLE 0073 0055</td>
+                                                                <td>$8.76</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>11/30/2016</td>
+                                                                <td>BAR DOUGH 069513010010951</td>
+                                                                <td>$108.87</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>11/27/2016</td>
+                                                                <td>WHOLEFDS SGN 10273 000000383</td>
+                                                                <td>$53.76</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td></td>
+                                                                <td><a>More Transactions</a></td>
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                            <ul class="collection with-header">
+                                <li class="collection-header">Summary of Your Account: </li>
+                                <li class="collection-item"><i class="fa fa-credit-card"></i> Total Balance: $567.23</li>
+                                <li class="collection-item"><i class="fa fa-credit-card"></i> Available Balance: $1202.89</li>
+                                <li class="collection-item"><i class="fa fa-money"></i> Minimum Payment Due: $110.00</li>
+                                <li class="collection-item"><i class="fa fa-calendar"></i> Next Due Date: 01/12/2017</li>
+                            </ul>
+                            <button ng-click="dashinfo()" class="waves-effect waves-light btn red" id="remove">Remove This is Bank</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
